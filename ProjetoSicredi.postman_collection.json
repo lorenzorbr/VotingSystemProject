@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "fd53fffc-2211-497b-9500-16afeac81f80",
+		"name": "ProjetoSicredi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CriaPauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\":\"Pauta para votar xyz\",\n    \"votingDeadline\":\"2021-12-12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pauta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pauta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CriaSessao",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/sessao",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CriaUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\":\"fulano\",\n   \"cpf\":\"16080692066\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\":{\n        \"id\":3\n    },\n    \"schedule\":{\n        \"id\":10\n    },\n    \"vote\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vote",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetResultado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vote/result/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vote",
+						"result",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
